@@ -92,5 +92,30 @@ Use tf.rank() to get the rank of the matrix.
 
 `print(tf.rank(marks_matrix))`
 
+12. Print the Shape of the Matrix Variable as a Python List
+Print the shape of the matrix as a list.
+
+`print(marks_matrix.shape.as_list())
+`
+13. Create a Tensor Variable
+
+Use tf.Variable to create a 3D tensor (nested lists) for marks of students in multiple exams at different universities.
+
+```python
+marks_tensor = tf.Variable([[[85, 90], [88, 92]], [[75, 80], [78, 85]], [[88, 91], [85, 89]]], dtype=tf.int32)
+print(marks_tensor)
+
+```
+14. Print the Rank of the Tensor Variable
+Use tf.rank() to get the rank of the tensor.
+
+`print(tf.rank(marks_tensor))
+`
+
+15. Print the Shape of the Tensor Variable as a Python List
+Print the shape of the tensor as a list.
+
+`print(marks_tensor.shape.as_list())
+`
 
 In this exercise, you have successfully created tensors of various ranks from political voting data using TensorFlow's Variable class. First, you created scalars, which are tensors that have a rank of 0. Next, you created vectors, which are tensors with a rank of 1. Matrices were then created, which are tensors of rank 2. Finally, tensors were created that have rank 3 or more. You confirmed the rank of the tensors you created by using TensorFlow's rank function and verified their shape by calling the tensor's shape attribute. 
