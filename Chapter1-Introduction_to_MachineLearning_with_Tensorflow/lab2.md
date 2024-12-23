@@ -13,15 +13,16 @@
 - Once you're logged in, click on File in the top left corner.
 - Select New Notebook.
 
+#### Task 2 - Import Tensorflow,Integer Variable (Scalar) and Print the following: Rank, Scalar value, Shape and Shape as Python List
 
-3. Import TensorFlow:
+1. Import TensorFlow:
 - In the first cell of the notebook, enter the following code to import TensorFlow
 
 `import tensorflow as tf`
 
 - Press Shift + Enter to run the cell.
 
-4. Create an Integer Variable (Scalar)
+2. Create an Integer Variable (Scalar)
 
 - Use TensorFlow's Variable class to create a scalar representing the number of days in a year (365).
 
@@ -33,7 +34,7 @@ print(day_in_year)
 
 ```
 
-5 . Print the Rank of the Scalar Variable
+3 . Print the Rank of the Scalar Variable
 Use the tf.rank() function to print the rank of the scalar variable.
 
 `print(tf.rank(day_in_year))
@@ -55,8 +56,9 @@ Convert the shape to a Python list for better visualization
 
 `print(day_in_year.shape.as_list())
 `
+#### Task 3 - Create a Vector Variable and Print the Rank and Shape of the Vaiable.
 
-7. Create a Vector Variable
+1. Create a Vector Variable
 - Use tf.Variable to create a vector (1D tensor) representing student scores.
 - Specify tf.float32 as the datatype to ensure it's a float.
 
@@ -66,17 +68,19 @@ print(scores)
 
 ```
 
-8. Print the Rank of the Vector Variable
+2 . Print the Rank of the Vector Variable
 Use tf.rank() to get the rank of the vector.
 
 `print(tf.rank(scores))`
 
-9. Print the Shape of the Vector Variable as a Python List
+3 . Print the Shape of the Vector Variable as a Python List
 Print the shape of the vector variable as a list
 
 `print(scores.shape.as_list())`
 
-10. Create a Matrix Variable
+#### Task 4 - Crate a Matrix Variable and Print the Rank and Shape of the Variable.
+
+1. Create a Matrix Variable
 
 - Use tf.Variable to create a 2D matrix representing the marks of three students in two exams.
 - Specify tf.int32 for the datatype.
@@ -87,17 +91,20 @@ print(marks_matrix)
 
 ```
 
-11. Print the Rank of the Matrix Variable
+2. Print the Rank of the Matrix Variable
 Use tf.rank() to get the rank of the matrix.
 
 `print(tf.rank(marks_matrix))`
 
-12. Print the Shape of the Matrix Variable as a Python List
+3. Print the Shape of the Matrix Variable as a Python List
 Print the shape of the matrix as a list.
 
 `print(marks_matrix.shape.as_list())
 `
-13. Create a Tensor Variable
+
+#### Task 5 - Create a Tensor Variable and print the Rank and shape of the Variable as Python List
+
+1. Create a Tensor Variable
 
 Use tf.Variable to create a 3D tensor (nested lists) for marks of students in multiple exams at different universities.
 
@@ -106,13 +113,13 @@ marks_tensor = tf.Variable([[[85, 90], [88, 92]], [[75, 80], [78, 85]], [[88, 91
 print(marks_tensor)
 
 ```
-14. Print the Rank of the Tensor Variable
+2 . Print the Rank of the Tensor Variable
 Use tf.rank() to get the rank of the tensor.
 
 `print(tf.rank(marks_tensor))
 `
 
-15. Print the Shape of the Tensor Variable as a Python List
+3 . Print the Shape of the Tensor Variable as a Python List
 Print the shape of the tensor as a list.
 
 `print(marks_tensor.shape.as_list())
