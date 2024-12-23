@@ -1,4 +1,3 @@
-
 # LAB - 3: Performing Tensor Addition in TensorFlow
 
 The marks scored by three different students at three different universities in entrance Exam A and Exam B are as follows:
@@ -138,7 +137,7 @@ matrix3 = tf.Variable([[62, 69, 65], \
 
 `matrix_sum.numpy()`
 
-Task 14: Verify Matrix Addition by Performing Element-wise Addition
+#### Task 14: Verify Matrix Addition by Performing Element-wise Addition
 
 14. Verify the Matrix Addition:
 
