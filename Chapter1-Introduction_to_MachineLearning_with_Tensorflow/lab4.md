@@ -13,12 +13,11 @@ In this exercise, you will learn how to perform tensor reshaping and transpositi
 - Once you're logged in, click on File in the top left corner.
 - Select New Notebook.
 
-#### Task 2 - Import Tensorflow
+#### Task 2 - Import TensorFlow and Create a Matrix
 
-1. Import TensorFlow:
-2. Create a matrix with two rows and four columns using TensorFlow's Variable class.
+- Import TensorFlow:
+-  Create a matrix with two rows and four columns using TensorFlow's Variable class.
 
-- In the first cell of the notebook, enter the following code to import TensorFlow and creating  a matrix
 
 ```python
 import tensorflow as tf
@@ -50,33 +49,32 @@ reshape1
 
 `reshape1.shape.as_list()
 `
-#### Task 6: Create Vectors for Marks Scored in Exam A for Each University
+#### Task 6: Reshape the Matrix to 8x1
 
-6. Create Vectors for Marks:
-
-- Create three vectors representing the marks scored by three different universities (University X, Y, and Z) in Exam A.
+- Reshape the matrix to eight rows and one column using TensorFlow's reshape function.
+- Verify and print the new shape as a Python list.
 
 ```python
-vec1 = tf.Variable([41, 38, 51], tf.int32)
-vec2 = tf.Variable([75, 67, 70], tf.int32)
-vec3 = tf.Variable([62, 69, 65], tf.int32)
+reshape2 = tf.reshape(matrix1, shape=[1, 8])
+reshape2
 ```
 
-#### Task 7: Create a New Variable for Total Marks Scored in Each University in Exam A
+#### Task 7:  Reshape the Matrix to 2x2x2
 
-7. Create a Variable for Total Marks in Each University:
+- Reshape the matrix into a tensor of size 2x2x2 using TensorFlow's reshape function.
+- Verify and print the new shape as a Python list.
 
-Sum the marks for each university to get the total marks scored in Exam A.
+`reshape2.shape.as_list()`
 
-`vec_sum = vec1 + vec2 + vec3`
+#### Task 8: Verify Rank of the Reshaped Tensor
 
-#### Task 8: Print the Result of the Vector Addition as a NumPy Array
+- Use TensorFlow's rank function to verify the rank of the reshaped tensor.
+- Convert the result to a NumPy variable and print it.
 
-8. Print the Result of the Addition:
-
-- Print the result of the sum of the three vectors as a NumPy array.
-
-`vec_sum.numpy()`
+```python
+reshape3 = tf.reshape(matrix1, shape=[8, 1])
+reshape3
+```
 
 #### Task 9: Verify Vector Addition by Performing Element-wise Addition
 9. Verify the Addition:
@@ -148,4 +146,3 @@ print((matrix1[1][2] + matrix2[1][2] + matrix3[1][2]).numpy())
 You can see that the + operation is equivalent to the element-wise addition of the three matrices created.
 
 In this exercise, you successfully performed tensor addition on data representing votes cast for political candidates. The transformation can be applied by using the + operation. You also verified that addition is performed element by element, and that one way to ensure that the transformation is valid is for the tensors to have the same rank and shape.
-
