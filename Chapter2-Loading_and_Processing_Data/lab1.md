@@ -1,7 +1,6 @@
-# LAB - 1: Loading Tabular Data and Rescaling Numerical Fields
+# Chapter 2: LAB - 1: Loading Tabular Data and Rescaling Numerical Fields
 
-In this exercise, you will perform tensor multiplication in TensorFlow using TensorFlow's matmul function and the @ operator. In this exercise, you will use the example of data from a sandwich retailer representing the ingredients of various Pizzas and the costs of different ingredients. You will use matrix multiplication to determine the costs of each sandwich.
-
+The dataset, Weather Conditions in World War Two , contains information temperature during the world war II, The fields represent temperature measures of the given date, the weather station at which the metrics were measured, model forecasts of weather-related metrics such as WindGustSpd, MaxTemp, MinTemp, Meantemp and so on. You are required to pre-process the data to make all the columns normally distributed with a mean 0 and a standard deviation of 1. You will demonstrate the effects with the MaxTemp column, which represents the maximum temperature on the given data at a given weather station.
 
 
 #### Task 1 - Open Google Collab
@@ -15,91 +14,73 @@ In this exercise, you will perform tensor multiplication in TensorFlow using Ten
 - Once you're logged in, click on File in the top left corner.
 - Select New Notebook.
 
-#### Task 2 - Import TensorFlow
+#### Task 2 - Import the Required Libraries
 
-- Import the TensorFlow library to perform matrix operations
-
-```python
-import tensorflow as tf
-```
-
-#### Task 3: Create a Matrix Representing Pizza Recipes
-
-- Create a matrix to represent the number of ingredients needed for three types of pizzas, with rows representing different pizzas and columns representing five different ingredients. Use TensorFlow's Variable class.
+Import the pandas library to handle tabular data.
 
 ```python
-matrix1 = tf.Variable([[1.0, 0.0, 3.0, 1.0, 2.0], 
-                       [0.0, 1.0, 1.0, 1.0, 1.0], 
-                       [2.0, 1.0, 0.0, 2.0, 0.0]], 
-                      tf.float32)
-matrix1
+import pandas as pd
 
 ```
 
-#### Task 4: Verify the Shape of Matrix1. 
+#### Task 3: Load the Dataset into a Pandas DataFrame and Display the Data
 
-- Verify the shape of the pizza recipe matrix by calling its shape attribute as a Python list
-
-```python
-matrix1.shape.as_list()
-```
-
-#### Task 5: Create a Matrix Representing Ingredient Costs and Weights
-
-- Create a second matrix representing the cost and weight of each of the five ingredients, with rows representing ingredients and columns representing cost and weight:
-
+Read the CSV file containing weather data into a DataFrame using pd.read_csv() and preview the first few rows of the dataset using the .head() method.
 
 ```python
-matrix2 = tf.Variable([[0.49, 103], 
-                       [0.18, 38], 
-                       [0.24, 69], 
-                       [1.02, 75], 
-                       [0.68, 78]])
-matrix2
-
-```
-
-#### Task 6: Perform Matrix Multiplication to Calculate Total Costs and Weights
-
-Use TensorFlow's matmul function to multiply matrix1 and matrix2 to calculate the cost and weight for each pizza type
-
-```python
-matmul1 = tf.matmul(matrix1, matrix2)
-matmul1
-
-```
-
-#### Task 7:  Create a Matrix Representing Sales Projections
-
-Create a matrix to represent sales projections for five different stores, with rows representing stores and columns representing the number of each type of pizza sold:
-
-```python
-matrix3 = tf.Variable([[120.0, 100.0, 90.0], 
-                       [30.0, 15.0, 20.0], 
-                       [220.0, 240.0, 185.0], 
-                       [145.0, 160.0, 155.0], 
-                       [330.0, 295.0, 290.0]])
+url = "https://raw.githubusercontent.com/fenago/tf/main/Chapter4-Regression_and_Classification_Models/dataset/Summary_of_Weather.csv"
+df = pd.read_csv(url)
+df.head()
 
 
 ```
 
-#### Task 8: Multiply Sales Projections by Pizza Costs and Weights
+#### Task 4: Drop the Non-Numerical Date Column from the DataFrame.
 
-Multiply matrix3 by the result of the matrix multiplication of matrix1 and matrix2 to determine the total cost and weight for each store
+- Drop the Date column as it is non-numerical, and preprocessing numerical data is the focus. Use drop() with axis=1 to specify a column, and inplace=True to modify the DataFrame directly.
 
 ```python
-matmul3 = matrix3 @ matmul1
-matmul3
+df.drop("Date", inplace=True, axis=1)
+```
 
+#### Task 5: Plot a Histogram of the MaxTemp Column
+
+Create a histogram for the MaxTemp column to visualize the frequency distribution of maximum temperatures in the dataset.
+
+
+```python
+ax = df['MaxTemp'].hist(color='gray', bins=20)
+ax.set_xlabel("MaxTemp")
+ax.set_ylabel("Frequency")
 
 ```
 
-#### Task 9: Analyze the Final Result
+#### Task 6: Import and Apply Standard Scaling to the Temperature Columns
 
-Examine the resulting tensor from the multiplication. It should contain the expected total cost and weight of ingredients for each store.
+Normalize the MaxTemp, MinTemp, and MeanTemp columns using StandardScaler to ensure the mean is 0 and the standard deviation is 1. 
+
+Convert the scaled array back to a DataFrame for ease of use.
 
 ```python
-matmul3
+from sklearn.preprocessing import StandardScaler
+df1 = df.loc[:, ['MaxTemp', 'MinTemp', 'MeanTemp']]
+scaler = StandardScaler() # Create an instance of StandardScaler
+df2 = scaler.fit_transform(df1)
+df2 = pd.DataFrame(df2, columns=['MaxTemp', 'MinTemp', 'MeanTemp'])
+df2.head()
+
 ```
 
+#### Task 7:  Plot a Histogram of the Transformed MaxTemp Column
+
+Plot a histogram for the normalized MaxTemp column to check the distribution of values after scaling.
+
+```python
+ax = df2['MaxTemp'].hist(color='gray')
+ax.set_xlabel("Normalized Temperature")
+ax.set_ylabel("Frequency")
+```
+The resulting histogram shows that the temperature values range from around -3 to 3 degrees Celsius, as evidenced by the range on the x axis of the histogram. By using the standard scaler, the values will always have a mean of 0 and a standard deviation of 1. Having the features normalized can speed up the model training process.
+
+In this exercise, you successfully imported tabular data using the pandas library and performed some preprocessing using the scikit-learn library. The preprocessing of data included dropping the date column and scaling the numerical fields so that they have a mean value of 0 and a standard deviation of 1.
 
