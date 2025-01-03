@@ -1,4 +1,4 @@
-# Chapter 2: LAB - 5: Loading Text Data for TensorFlow Models
+# Chapter 2: LAB - 5: Using TensorBoard to Visualize Matrix Multiplication.
 
 In this exercise, you'll learn how to load in audio data for batch processing. The dataset, data_speech_commands_v0.02, contains speech samples of people speaking the word zero for exactly 1 second with a sample rate of 44.1 kHz, meaning that for every second, there are 44,100 data points. You will apply some common audio pre-processing techniques, including converting the data into the Fourier domain, sampling the data to ensure the data has the same size as the model, and generating MFCCs for each audio sample. This will generate a pre-processed dataset object that can be input into a TensorFlow model for training.
 
