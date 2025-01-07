@@ -1,4 +1,4 @@
-# Chapter 6: LAB - 3: Predicting the radiator position of a space shuttle using Hyperband from Keras Tuner.
+# Chapter 6: LAB - 4: Predicting the radiator position of a space shuttle using Hyperband from Keras Tuner.
 
 
 
