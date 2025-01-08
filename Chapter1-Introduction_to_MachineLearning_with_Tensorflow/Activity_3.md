@@ -1,18 +1,20 @@
 
-**Activity 3: Applying Activation Functions**
+# **Activity 3: Applying Activation Functions**
 
 In this activity, you will recall many of the concepts used throughout the chapter as well as apply activation functions to tensors. You will use example data of bike dealership sales, apply these concepts, show the sales records of various salespeople, and highlight those with net positive sales.
-Sales records:
- 
-Figure 1.37: Sales records
 
-Vehicle MSRPs:
- 
-Figure 1.38: Vehicle MSRPs
+**Sales records:**
+ ![](https://github.com/Neha-Chiluka/tf/blob/main/images/2.png?raw=true)
+
+
+**Vehicle MSRPs:**
+
+![](https://github.com/Neha-Chiluka/tf/blob/main/images/3.png?raw=true)
 
 Fixed costs:
  
-Figure 1.39: Vehicle MSRPs
+ ![](https://github.com/Neha-Chiluka/tf/blob/main/images/4.png?raw=true)
+
 
 Perform the following steps:
 
@@ -28,8 +30,10 @@ Perform the following steps:
 
  
 
-Figure 1.40: The output of the matrix multiplication
+![](https://github.com/Neha-Chiluka/tf/blob/main/images/5.png?raw=true)
 
 6.	Apply a ReLU activation function to highlight the net-positive salespeople and print the result.
 
 You should get the following result:
+
+![](https://github.com/Neha-Chiluka/tf/blob/main/images/6.png?raw=true)
