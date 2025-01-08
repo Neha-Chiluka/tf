@@ -11,9 +11,8 @@ In this activity, you are required to simulate the grouping of 24 school childre
 
 You should get the following output as   **[24]**
 
- 
-
 3.	Reshape the matrix so that it has 12 rows and 2 columns using TensorFlow’s reshape function representing 12 pairs of school children. Verify the shape of the new matrix.
+
 You should get the following output as **[12,2]**
  
 4.	Reshape the original matrix so that it has a shape of 3x4x3 using TensorFlow’s reshape function representing 3 groups of 4 sets of pairs of school children. Verify the shape of the new tensor.
