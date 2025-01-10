@@ -1,4 +1,4 @@
-#### Activity 2.03: Loading Audio Data for Batch Processing
+# Activity 2.03: Loading Audio Data for Batch Processing
 
 In this activity, you will load audio data for batch processing. The audio preprocessing techniques that will be performed include taking the absolute value and using the logarithm of 1 plus the value. This will ensure the resulting values are non-negative and logarithmically scaled. The result will be a preprocessed dataset object that can be input into a TensorFlow model for training.
 
