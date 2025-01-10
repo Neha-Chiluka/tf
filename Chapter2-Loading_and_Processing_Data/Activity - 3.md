@@ -14,6 +14,6 @@ The steps for this activity are as follows:
 
 The output will look as follows:
  
-Figure 2.19: Expected output of Activity 2.03
+![](https://github.com/Neha-Chiluka/tf/blob/main/images/8.png?raw=true)
 
 
