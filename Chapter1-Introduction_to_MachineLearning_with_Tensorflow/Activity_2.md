@@ -1,4 +1,4 @@
-**Activity 2: Performing Tensor Reshaping and Transposition in TensorFlow**
+# **Activity 2: Performing Tensor Reshaping and Transposition in TensorFlow**
 
 In this activity, you are required to simulate the grouping of 24 school children for class projects. The dimensions of each resulting reshaped or transposed tensor will represent the size of each group.
 
